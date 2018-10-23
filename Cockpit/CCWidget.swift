@@ -17,7 +17,7 @@ class CCWidget: UIView {
 
 class CCTimeSavedWidget: CCWidget {
     
-    init(image: UIImage, quanitity: Int, scale: String) {
+    init(quanitity: Int, scale: String) {
         super.init(frame: CGRect.zero)
         
         imageView = UIImageView()
@@ -36,21 +36,50 @@ class CCTimeSavedWidget: CCWidget {
         
         labelContainer.snp.makeConstraints { (make) in
             make.center.equalTo(imageView!.snp.center)
-            make.size.equalTo(100)
+            make.size.equalTo(70)
         }
         
         mainLabel!.snp.makeConstraints { (make) in
-            make.top.trailing.leading.equalToSuperview()
+            make.top.equalToSuperview()
+            make.centerX.equalToSuperview()
         }
         
         auxLabel!.snp.makeConstraints { (make) in
             make.top.equalTo(mainLabel!.snp.bottom)
-            make.bottom.leading.trailing.equalToSuperview()
+            make.centerX.equalToSuperview()
         }
         
-        imageView?.image = image
+        imageView?.image = UIImage(named: "CCCircle")
         mainLabel?.text = String(quanitity)
         auxLabel?.text = scale
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class CCAdsBlockedWidget: CCWidget {
+    
+    init(quanitity: Int) {
+        super.init(frame: CGRect.zero)
+        
+        imageView = UIImageView()
+        mainLabel = UILabel()
+        
+        self.addSubview(imageView!)
+        self.addSubview(mainLabel!)
+        
+        imageView!.snp.makeConstraints({ (make) in
+            make.center.equalToSuperview()
+        })
+        
+        mainLabel!.snp.makeConstraints { (make) in
+            make.center.equalTo(imageView!.snp.center)
+        }
+        
+        imageView?.image = UIImage(named: "CCAdBlocking")
+        mainLabel?.text = String(quanitity)
     }
     
     required init?(coder aDecoder: NSCoder) {
