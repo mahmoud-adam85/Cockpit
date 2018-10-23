@@ -20,7 +20,22 @@ class CCAbstractCell: UIView {
 
     var titleLabel: UILabel = UILabel()
     var descriptionLabel: UILabel = UILabel()
-    var widget: CCWidget? = nil
+    private var _widget: CCWidget? = nil
+    var widget: CCWidget? {
+        get {
+            return _widget
+        }
+        set {
+            _widget?.removeFromSuperview()
+            _widget = newValue
+            if let w = _widget {
+                widgetContainer.addSubview(w)
+                w.snp.makeConstraints({ (make) in
+                    make.edges.equalToSuperview()
+                })
+            }
+        }
+    }
     
     let contentView = UIView()
     let stackView = UIStackView()
