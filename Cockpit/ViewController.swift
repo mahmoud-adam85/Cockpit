@@ -37,7 +37,7 @@ extension ViewController: CCDataSource {
         if index == 0 {
             return 300
         }
-        return 100
+        return 144
     }
     
     func cellFor(index: Int) -> UIView {
