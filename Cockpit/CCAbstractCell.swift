@@ -16,10 +16,6 @@ struct CCCellUX {
     static let ShadowOpacity: Float = 0.9
 }
 
-class CCWidget: UIView {
-    
-}
-
 class CCAbstractCell: UIView {
 
     var titleLabel: UILabel = UILabel()

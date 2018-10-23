@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5A59C59FF3CB522B40D9EC45 /* Pods_CockpitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CA0F0D3C65B7D98D168665 /* Pods_CockpitTests.framework */; };
 		9F89258D4108F72A5BFA7404 /* Pods_Cockpit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 441629F57BB402C263BCF2B6 /* Pods_Cockpit.framework */; };
+		AF0505D7217F4A500054B4C2 /* CCDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0505D6217F4A500054B4C2 /* CCDataSource.swift */; };
+		AF0505D9217F4A9C0054B4C2 /* CCWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0505D8217F4A9C0054B4C2 /* CCWidget.swift */; };
 		AF6A4F65217DCC0E0002D762 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A4F64217DCC0E0002D762 /* AppDelegate.swift */; };
 		AF6A4F67217DCC0E0002D762 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A4F66217DCC0E0002D762 /* ViewController.swift */; };
 		AF6A4F6A217DCC0E0002D762 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF6A4F68217DCC0E0002D762 /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 		2A11D2593C4C2BD2997BFE0C /* Pods-CockpitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CockpitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CockpitTests/Pods-CockpitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		441629F57BB402C263BCF2B6 /* Pods_Cockpit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cockpit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		753249DAA285E0472E360340 /* Pods-Cockpit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cockpit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cockpit/Pods-Cockpit.debug.xcconfig"; sourceTree = "<group>"; };
+		AF0505D6217F4A500054B4C2 /* CCDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCDataSource.swift; sourceTree = "<group>"; };
+		AF0505D8217F4A9C0054B4C2 /* CCWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCWidget.swift; sourceTree = "<group>"; };
 		AF6A4F61217DCC0E0002D762 /* Cockpit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cockpit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF6A4F64217DCC0E0002D762 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF6A4F66217DCC0E0002D762 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +108,9 @@
 			children = (
 				AF6A4F64217DCC0E0002D762 /* AppDelegate.swift */,
 				AF6A4F66217DCC0E0002D762 /* ViewController.swift */,
+				AF0505D8217F4A9C0054B4C2 /* CCWidget.swift */,
 				AF6A4F84217DCF9C0002D762 /* CCAbstractCell.swift */,
+				AF0505D6217F4A500054B4C2 /* CCDataSource.swift */,
 				AF6A4F86217DD2D30002D762 /* CCViewController.swift */,
 				AF6A4F68217DCC0E0002D762 /* Main.storyboard */,
 				AF6A4F6B217DCC0F0002D762 /* Assets.xcassets */,
@@ -296,8 +302,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF6A4F85217DCF9C0002D762 /* CCAbstractCell.swift in Sources */,
+				AF0505D9217F4A9C0054B4C2 /* CCWidget.swift in Sources */,
 				AF6A4F67217DCC0E0002D762 /* ViewController.swift in Sources */,
 				AF6A4F87217DD2D30002D762 /* CCViewController.swift in Sources */,
+				AF0505D7217F4A500054B4C2 /* CCDataSource.swift in Sources */,
 				AF6A4F65217DCC0E0002D762 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
