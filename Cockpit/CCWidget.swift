@@ -87,10 +87,55 @@ class CCAdsBlockedWidget: CCWidget {
     }
 }
 
+class CCDataSavedWidget: CCWidget {
+    static private let QuantityFontAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 50, weight: .ultraLight),
+                                                 NSAttributedStringKey.foregroundColor: CCUX.CliqzBlueGlow]
+    
+    static private let ScaleFontAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 50, weight: .medium),
+                                              NSAttributedStringKey.foregroundColor: CCUX.CliqzBlueGlow]
+    
+    
+    init(quanitity: Int, scale: String) {
+        super.init(frame: CGRect.zero)
+        
+        mainLabel = UILabel()
+        mainLabel?.textAlignment = .center
+        mainLabel?.sizeToFit()
+        
+        auxLabel = UILabel()
+        auxLabel?.textAlignment = .center
+        auxLabel?.sizeToFit()
+        
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = -40.0
+        stackView.addArrangedSubview(mainLabel!)
+        stackView.addArrangedSubview(auxLabel!)
+        
+        self.addSubview(stackView)
+        
+        stackView.snp.makeConstraints { (make) in
+            make.height.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().dividedBy(1.2)
+        }
+        
+        updateView(quanitity: quanitity, scale: scale)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func updateView(quanitity: Int, scale: String) {
+        mainLabel?.attributedText = NSAttributedString(string: String(quanitity), attributes: CCDataSavedWidget.QuantityFontAttributes)
+        auxLabel?.attributedText = NSAttributedString(string: scale, attributes: CCDataSavedWidget.ScaleFontAttributes)
+    }
+}
 
 class CCBatterySavedWidget: CCWidget {
-    static private let BigFontAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 36), NSAttributedStringKey.foregroundColor: CCUX.CliqzBlueGlow]
-    static private let SmallFontAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12), NSAttributedStringKey.foregroundColor: CCUX.CliqzBlueGlow]
+    static private let QuantityFontAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 36), NSAttributedStringKey.foregroundColor: CCUX.CliqzBlueGlow]
+    static private let ScaleFontAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12), NSAttributedStringKey.foregroundColor: CCUX.CliqzBlueGlow]
     
     init(quanitity: Int, scale: String) {
         super.init(frame: CGRect.zero)
@@ -119,8 +164,8 @@ class CCBatterySavedWidget: CCWidget {
     }
     
     func updateView(quanitity: Int, scale: String) {
-        let attributedText = NSMutableAttributedString(string: String(quanitity), attributes: CCBatterySavedWidget.BigFontAttributes)
-        attributedText.append(NSAttributedString(string: scale, attributes: CCBatterySavedWidget.SmallFontAttributes))
+        let attributedText = NSMutableAttributedString(string: String(quanitity), attributes: CCBatterySavedWidget.QuantityFontAttributes)
+        attributedText.append(NSAttributedString(string: scale, attributes: CCBatterySavedWidget.ScaleFontAttributes))
         mainLabel?.attributedText = attributedText
     }
 }

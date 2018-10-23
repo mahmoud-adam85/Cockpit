@@ -19,7 +19,7 @@ protocol CCCollectionDataSourceProtocol: class {
 struct CCUX {
     static let HorizontalContentWigetRatio: CGFloat = 272 / 777
     static let VerticalContentWidgetRatio: CGFloat = 378 / 583
-    static let CliqzBlueGlow: UIColor = UIColor.init(red: 7.0/255.0, green: 0.0, blue: 0.0, alpha: 1)
+    static let CliqzBlueGlow: UIColor = UIColor.init(colorString: "07E6FE")
 }
 
 class CCCollectionViewController: UIViewController {

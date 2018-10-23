@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EABF04A217FB3630002FF09 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EABF049217FB3630002FF09 /* UIColorExtension.swift */; };
 		5A59C59FF3CB522B40D9EC45 /* Pods_CockpitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CA0F0D3C65B7D98D168665 /* Pods_CockpitTests.framework */; };
 		9F89258D4108F72A5BFA7404 /* Pods_Cockpit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 441629F57BB402C263BCF2B6 /* Pods_Cockpit.framework */; };
 		AF0505D7217F4A500054B4C2 /* CCDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0505D6217F4A500054B4C2 /* CCDataSource.swift */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		19CA0F0D3C65B7D98D168665 /* Pods_CockpitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CockpitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EABF049217FB3630002FF09 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		28C1DB7725E4DE44F41A60EA /* Pods-Cockpit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cockpit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cockpit/Pods-Cockpit.release.xcconfig"; sourceTree = "<group>"; };
 		2A11D2593C4C2BD2997BFE0C /* Pods-CockpitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CockpitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CockpitTests/Pods-CockpitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		441629F57BB402C263BCF2B6 /* Pods_Cockpit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cockpit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +118,7 @@
 				AF6A4F6B217DCC0F0002D762 /* Assets.xcassets */,
 				AF6A4F6D217DCC0F0002D762 /* LaunchScreen.storyboard */,
 				AF6A4F70217DCC0F0002D762 /* Info.plist */,
+				1EABF049217FB3630002FF09 /* UIColorExtension.swift */,
 			);
 			path = Cockpit;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF6A4F85217DCF9C0002D762 /* CCAbstractCell.swift in Sources */,
+				1EABF04A217FB3630002FF09 /* UIColorExtension.swift in Sources */,
 				AF0505D9217F4A9C0054B4C2 /* CCWidget.swift in Sources */,
 				AF6A4F67217DCC0E0002D762 /* ViewController.swift in Sources */,
 				AF6A4F87217DD2D30002D762 /* CCViewController.swift in Sources */,
