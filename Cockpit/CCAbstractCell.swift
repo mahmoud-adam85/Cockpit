@@ -59,8 +59,8 @@ class CCAbstractCell: UIView {
         self.contentView.layer.cornerRadius = CCCellUX.CornerRadius
         self.contentView.clipsToBounds = true
         
-        titleLabel.text = "Some Very Long Title"
-        descriptionLabel.text = "Some very long description just to see how this stuff behaves, muahahaha, evil laugh."
+//        titleLabel.text = "Some Very Long Title"
+//        descriptionLabel.text = "Some very long description just to see how this stuff behaves, muahahaha, evil laugh."
         
         descriptionLabel.numberOfLines = 0
     }

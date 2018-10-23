@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol CCDataSource: class {
+protocol CCCollectionDataSourceProtocol: class {
     func numberOfRows() -> Int
     func heightFor(index: Int) -> CGFloat
     func cellFor(index: Int) -> UIView
@@ -21,12 +21,12 @@ struct CCUX {
     static let VerticalContentWidgetRatio: CGFloat = 378 / 583
 }
 
-class CCViewController: UIViewController {
+class CCCollectionViewController: UIViewController {
     
     let scrollView = UIScrollView()
     let stackView = UIStackView()
     
-    weak var dataSource: CCDataSource? = nil
+    weak var dataSource: CCCollectionDataSourceProtocol? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
