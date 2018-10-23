@@ -22,8 +22,8 @@ class CCWidget: UIView {
 
 class CCAbstractCell: UIView {
 
-    var title: String = ""
-    var measureDescription: String = ""
+    var titleLabel: UILabel = UILabel()
+    var descriptionLabel: UILabel = UILabel()
     var widget: CCWidget? = nil
     
     let contentView = UIView()
@@ -37,6 +37,8 @@ class CCAbstractCell: UIView {
         contentView.addSubview(stackView)
         stackView.addArrangedSubview(widgetContainer)
         stackView.addArrangedSubview(descriptionContainer)
+        descriptionContainer.addSubview(titleLabel)
+        descriptionContainer.addSubview(descriptionLabel)
         
         contentView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
@@ -56,6 +58,11 @@ class CCAbstractCell: UIView {
         
         self.contentView.layer.cornerRadius = CCCellUX.CornerRadius
         self.contentView.clipsToBounds = true
+        
+        titleLabel.text = "Some Very Long Title"
+        descriptionLabel.text = "Some very long description just to see how this stuff behaves, muahahaha, evil laugh."
+        
+        descriptionLabel.numberOfLines = 0
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -80,6 +87,16 @@ class CCVerticalCell: CCAbstractCell {
         descriptionContainer.snp.makeConstraints { (make) in
             make.width.equalToSuperview()
             make.height.equalToSuperview().multipliedBy(descriptionRatio)
+        }
+        
+        titleLabel.snp.makeConstraints { (make) in
+            make.top.leading.trailing.equalToSuperview()
+        }
+        
+        descriptionLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(titleLabel.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
         
         widgetContainer.backgroundColor = UIColor(white: 0.85, alpha: 1.0)
@@ -112,6 +129,16 @@ class CCHorizontalCell: CCAbstractCell {
         descriptionContainer.snp.makeConstraints { (make) in
             make.height.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(descriptionRatio)
+        }
+        
+        titleLabel.snp.makeConstraints { (make) in
+            make.top.leading.trailing.equalToSuperview()
+        }
+        
+        descriptionLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(titleLabel.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
         
         widgetContainer.backgroundColor = UIColor(white: 0.85, alpha: 1.0)
