@@ -40,6 +40,7 @@ class CCCollectionViewController: UIViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(stackView)
         
+        scrollView.backgroundColor = UIColor.black
         scrollView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }

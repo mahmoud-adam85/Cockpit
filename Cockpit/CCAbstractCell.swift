@@ -11,7 +11,7 @@ import SnapKit
 
 struct CCCellUX {
     static let CornerRadius: CGFloat = 20.0
-    static let ShadowColor: CGColor = UIColor.blue.cgColor
+    static let ShadowColor: CGColor = UIColor.init(colorString: "00AEF0").cgColor
     static let ShadowRadius: CGFloat = 4.0
     static let ShadowOpacity: Float = 0.9
 }
@@ -70,10 +70,15 @@ class CCAbstractCell: UIView {
         self.contentView.layer.cornerRadius = CCCellUX.CornerRadius
         self.contentView.clipsToBounds = true
         
-//        titleLabel.text = "Some Very Long Title"
-//        descriptionLabel.text = "Some very long description just to see how this stuff behaves, muahahaha, evil laugh."
+        titleLabel.textAlignment = .center
+        titleLabel.textColor = UIColor.white
         
         descriptionLabel.numberOfLines = 0
+        descriptionLabel.textAlignment = .center
+        descriptionLabel.textColor = UIColor.white
+        
+        self.backgroundColor = UIColor.black
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -109,9 +114,6 @@ class CCVerticalCell: CCAbstractCell {
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
-        
-        widgetContainer.backgroundColor = UIColor(white: 0.85, alpha: 1.0)
-        descriptionContainer.backgroundColor = UIColor(white: 0.95, alpha: 1.0)
     }
     
     override init(frame: CGRect) {
@@ -151,9 +153,6 @@ class CCHorizontalCell: CCAbstractCell {
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
-        
-        widgetContainer.backgroundColor = UIColor(white: 0.85, alpha: 1.0)
-        descriptionContainer.backgroundColor = UIColor(white: 0.95, alpha: 1.0)
     }
     
     override init(frame: CGRect) {

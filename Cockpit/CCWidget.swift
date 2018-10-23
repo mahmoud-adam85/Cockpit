@@ -23,7 +23,11 @@ class CCTimeSavedWidget: CCWidget {
         imageView = UIImageView()
         let labelContainer = UIView()
         mainLabel = UILabel()
+        mainLabel?.textColor = CCUX.CliqzBlueGlow
+        mainLabel?.font = UIFont.systemFont(ofSize: 36, weight: .regular)
         auxLabel = UILabel()
+        auxLabel?.textColor = CCUX.CliqzBlueGlow
+        auxLabel?.font = UIFont.systemFont(ofSize: 36, weight: .ultraLight)
         
         self.addSubview(imageView!)
         self.addSubview(labelContainer)
@@ -66,6 +70,8 @@ class CCAdsBlockedWidget: CCWidget {
         
         imageView = UIImageView()
         mainLabel = UILabel()
+        mainLabel?.textColor = CCUX.CliqzBlueGlow
+        mainLabel?.font = UIFont.systemFont(ofSize: 36, weight: .light)
         
         self.addSubview(imageView!)
         self.addSubview(mainLabel!)
