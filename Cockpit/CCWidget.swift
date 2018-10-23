@@ -86,3 +86,60 @@ class CCAdsBlockedWidget: CCWidget {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+
+class CCBatterySavedWidget: CCWidget {
+    static private let BigFontAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 36), NSAttributedStringKey.foregroundColor: CCUX.CliqzBlueGlow]
+    static private let SmallFontAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12), NSAttributedStringKey.foregroundColor: CCUX.CliqzBlueGlow]
+    
+    init(quanitity: Int, scale: String) {
+        super.init(frame: CGRect.zero)
+        
+        imageView = UIImageView(image: UIImage.init(named: "CCBattery"))
+        mainLabel = UILabel()
+        mainLabel?.textAlignment = .center
+        
+        self.addSubview(imageView!)
+        self.addSubview(mainLabel!)
+        
+        imageView!.snp.makeConstraints({ (make) in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().dividedBy(1.5)
+        })
+        
+        mainLabel!.snp.makeConstraints { (make) in
+            make.centerX.equalTo(imageView!)
+            make.top.equalTo(imageView!.snp.bottom)
+        }
+        updateView(quanitity: quanitity, scale: scale)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func updateView(quanitity: Int, scale: String) {
+        let attributedText = NSMutableAttributedString(string: String(quanitity), attributes: CCBatterySavedWidget.BigFontAttributes)
+        attributedText.append(NSAttributedString(string: scale, attributes: CCBatterySavedWidget.SmallFontAttributes))
+        mainLabel?.attributedText = attributedText
+    }
+}
+
+class CCAntiPhishingWidget: CCWidget {
+    
+    init() {
+        super.init(frame: CGRect.zero)
+        
+        imageView = UIImageView(image: UIImage.init(named: "CCHook"))
+        self.addSubview(imageView!)
+        
+        imageView!.snp.makeConstraints({ (make) in
+            make.center.equalToSuperview()
+        })
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+

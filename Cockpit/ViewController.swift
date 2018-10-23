@@ -35,9 +35,9 @@ extension ViewController: CCCollectionDataSourceProtocol {
     
     func heightFor(index: Int) -> CGFloat {
         if index == 0 {
-            return 300
+            return 250
         }
-        return 144
+        return 120
     }
     
     func cellFor(index: Int) -> UIView {

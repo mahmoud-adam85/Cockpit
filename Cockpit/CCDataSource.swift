@@ -34,8 +34,8 @@ class CCDataSource {
         let timeSaved = CCCell(title: "Time Saved", description: "that you can spend with your friends", widget: CCTimeSavedWidget(quanitity: 100, scale: "MIN"))
         let adsBlocked = CCCell(title: "AdsBlocked", description: "so that you can enjoy surfing without ads", widget: CCAdsBlockedWidget(quanitity: 4000))
         let dataSaved = CCCell(title: "Data Saved", description: "enough for another video", widget: CCWidget())
-        let batterySaved = CCCell(title: "Battery Saved", description: "so that you can enjoy your phone a little longer", widget: CCWidget())
-        let phishingProtection = CCCell(title: "Phishing protection", description: "so that you can swim freely", widget: CCWidget())
+        let batterySaved = CCCell(title: "Battery Saved", description: "so that you can enjoy your phone a little longer", widget: CCBatterySavedWidget(quanitity: 225, scale: "MIN"))
+        let phishingProtection = CCCell(title: "Phishing protection", description: "so that you can swim freely", widget: CCAntiPhishingWidget())
         
         cells = [timeSaved, adsBlocked, dataSaved, batterySaved, phishingProtection]
     }
