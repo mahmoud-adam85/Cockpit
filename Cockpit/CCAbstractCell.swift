@@ -72,10 +72,14 @@ class CCAbstractCell: UIView {
         
         titleLabel.textAlignment = .center
         titleLabel.textColor = UIColor.white
+        titleLabel.font = UIFont.systemFont(ofSize: 19, weight: .medium)
+        titleLabel.numberOfLines = 0
+        
         
         descriptionLabel.numberOfLines = 0
         descriptionLabel.textAlignment = .center
         descriptionLabel.textColor = UIColor.white
+        descriptionLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         
         self.backgroundColor = UIColor.black
         
@@ -108,11 +112,9 @@ class CCVerticalCell: CCAbstractCell {
         titleLabel.snp.makeConstraints { (make) in
             make.top.leading.trailing.equalToSuperview()
         }
-        
         descriptionLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(titleLabel.snp.bottom)
-            make.leading.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.top.equalTo(titleLabel.snp.bottom).offset(10)
+            make.leading.trailing.equalToSuperview().inset(5)
         }
     }
     
@@ -132,6 +134,9 @@ class CCHorizontalCell: CCAbstractCell {
     init(widgetRatio: CGFloat, descriptionRatio: CGFloat) {
         super.init(frame: CGRect.zero)
         
+        titleLabel.textAlignment = .left
+        descriptionLabel.textAlignment = .left
+        
         stackView.axis = .horizontal
         
         widgetContainer.snp.makeConstraints { (make) in
@@ -145,13 +150,13 @@ class CCHorizontalCell: CCAbstractCell {
         }
         
         titleLabel.snp.makeConstraints { (make) in
-            make.top.leading.trailing.equalToSuperview()
+            make.top.equalToSuperview().offset(20)
+            make.leading.trailing.equalToSuperview().inset(5)
         }
-        
+
         descriptionLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(titleLabel.snp.bottom)
-            make.leading.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.top.equalTo(titleLabel.snp.bottom).offset(10)
+            make.leading.trailing.equalToSuperview().inset(5)
         }
     }
     

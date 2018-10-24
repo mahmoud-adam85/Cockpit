@@ -21,36 +21,31 @@ class CCTimeSavedWidget: CCWidget {
         super.init(frame: CGRect.zero)
         
         imageView = UIImageView()
-        let labelContainer = UIView()
         mainLabel = UILabel()
         mainLabel?.textColor = CCUX.CliqzBlueGlow
+        mainLabel?.textAlignment = .center
         mainLabel?.font = UIFont.systemFont(ofSize: 36, weight: .regular)
         auxLabel = UILabel()
         auxLabel?.textColor = CCUX.CliqzBlueGlow
+        auxLabel?.textAlignment = .center
         auxLabel?.font = UIFont.systemFont(ofSize: 36, weight: .ultraLight)
         
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 0.0
+        stackView.addArrangedSubview(mainLabel!)
+        stackView.addArrangedSubview(auxLabel!)
+        
+        self.addSubview(stackView)
         self.addSubview(imageView!)
-        self.addSubview(labelContainer)
-        labelContainer.addSubview(mainLabel!)
-        labelContainer.addSubview(auxLabel!)
         
         imageView!.snp.makeConstraints({ (make) in
             make.center.equalToSuperview()
         })
         
-        labelContainer.snp.makeConstraints { (make) in
+        stackView.snp.makeConstraints { (make) in
             make.center.equalTo(imageView!.snp.center)
             make.size.equalTo(70)
-        }
-        
-        mainLabel!.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
-            make.centerX.equalToSuperview()
-        }
-        
-        auxLabel!.snp.makeConstraints { (make) in
-            make.top.equalTo(mainLabel!.snp.bottom)
-            make.centerX.equalToSuperview()
         }
         
         imageView?.image = UIImage(named: "CCCircle")
@@ -140,8 +135,8 @@ class CCDataSavedWidget: CCWidget {
 }
 
 class CCBatterySavedWidget: CCWidget {
-    static private let QuantityFontAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 36), NSAttributedStringKey.foregroundColor: CCUX.CliqzBlueGlow]
-    static private let ScaleFontAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12), NSAttributedStringKey.foregroundColor: CCUX.CliqzBlueGlow]
+    static private let QuantityFontAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 36, weight: .regular), NSAttributedStringKey.foregroundColor: CCUX.CliqzBlueGlow]
+    static private let ScaleFontAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12, weight: .regular), NSAttributedStringKey.foregroundColor: CCUX.CliqzBlueGlow]
     
     init(quanitity: Int, scale: String) {
         super.init(frame: CGRect.zero)
